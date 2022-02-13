@@ -13,7 +13,7 @@ public class Utils {
 
 
     public ArrayList<NumeroData> numeroData = new ArrayList<>();
-    String stringUrl = "https://challenge.dienekes.com.br/api/numbers?page=";
+    String stringUrl = "http://challenge.dienekes.com.br/api/numbers?page=";
     int page = 1;
     Gson gson = new Gson();
     Boolean jobDone = false;

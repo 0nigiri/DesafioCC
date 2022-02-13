@@ -18,39 +18,41 @@ public class NumeroController {
 
 
     @GetMapping("/iniciar")
-    public ArrayList<Numero> extract(){
+    public ArrayList<Double> extract() {
         Utils util = new Utils();
         util.listNumeros();
-        ArrayList<Numero> numeros = new ArrayList<>();
+        ArrayList<Double> lista = new ArrayList<>();
+        for (Double num : Utils.ordenarNumeros(util.numeroData)) {
+            lista.add(num);
+        }
+        return lista;
 
+/*
+        --Adicionar para o sql
+        ArrayList<Numero> numeros = new ArrayList<>();
         for (Double num : Utils.ordenarNumeros(util.numeroData)) {
             Numero n = new Numero();
-
             n.setNumero(num);
             numeros.add(n);
-
-           // Adicionar para o sql
-           // numeroService.saveNumero(n);
+            numeroService.saveNumero(n);
         }
+        return numeroService.getAllNumeros();
+        -alterar arraylist de double para Numeros
+*/
 
-
-           //return numeroService.getAllNumeros();
-
-        return numeros;
     }
-
 
 
     @PostMapping("/add")
-    public String add(@RequestBody Numero numero){
+    public String add(@RequestBody Numero numero) {
         numeroService.saveNumero(numero);
         return "Numero adicionado";
     }
+
     @GetMapping("/getAll")
-    public List<Numero> getAllNumero(){
+    public List<Numero> getAllNumero() {
         return numeroService.getAllNumeros();
     }
-
 
 
 }
