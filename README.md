@@ -6,3 +6,5 @@ Para fazer os teste do desafio, eu utilizei o Postman para enviar um request GET
 No banco de dados consiste em várias paginas e em cada página consiste em um array de números envolvendo 100 números decimais dentro deles. Quando o aplicativo terminar de extrair todas as paginas, ele ira juntar todas as paginas em um array e então começara a ordenar eles em ordem crescente.
 
 Após os números estiverem em ordenados, será possível ver os números retornados no postman
+
+![image](https://user-images.githubusercontent.com/26257093/153938011-c8365acc-213b-42e5-856d-f00a7e904e13.png)
