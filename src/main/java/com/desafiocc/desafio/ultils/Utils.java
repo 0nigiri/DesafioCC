@@ -3,6 +3,9 @@ package com.desafiocc.desafio.ultils;
 
 import com.desafiocc.desafio.model.NumeroData;
 import com.google.gson.Gson;
+import org.apache.http.impl.client.HttpClients;
+import org.springframework.http.client.ClientHttpRequestFactory;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
@@ -40,7 +43,9 @@ public class Utils {
 
     // Metodo de fazer pegar o Json do url
     public String getUrlJsonString(int pag) {
-        RestTemplate restTemplate = new RestTemplate();
+        ClientHttpRequestFactory requestFactory = new
+                HttpComponentsClientHttpRequestFactory(HttpClients.createDefault());
+        RestTemplate restTemplate = new RestTemplate(requestFactory);
         return restTemplate.getForObject(stringUrl + pag, String.class);
     }
 
